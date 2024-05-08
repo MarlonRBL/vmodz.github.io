@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VModz - Service</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Abel&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background-image: url('bg.png');
+            background-size: cover;
+            background-position: center;
+            position: relative;
+            height: 100vh;
+            margin: 0;
+            overflow: hidden;
+            font-family: "Abel", sans-serif;
+        }
+
+        body::before {
+            content: '';
+            background: inherit;
+            filter: blur(8px);
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            z-index: -1;
+        }
+
+        .abel-regular {
+            font-family: "Abel", sans-serif;
+            font-weight: 400;
+            font-style: normal;
+        }
+
+        .content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            min-height: calc(100vh - 60px);
+            padding-bottom: 60px;
+            position: relative;
+        }
+
+        .topbar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 20px;
+            height: 100px;
+            background: linear-gradient(90deg, #1b003a, #0f0f0f, #1b003a);
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 10;
+        }
+
+        .title {
+            font-family: "Abel", sans-serif;
+            font-size: 2em;
+            color: white;
+        }
+
+
+        .button-list {
+            display: flex;
+            gap: 12px;
+        }
+
+        .button-list a {
+            text-decoration: none;
+            color: white;
+            font-family: "Abel", sans-serif;
+            font-size: 20px;
+            padding: 8px 8px;
+        }
+
+        .logo {
+            border-radius: 10px;
+            width: 75px;
+            height: 75px;
+            background-image: url('logo.png');
+            background-size: contain;
+            background-repeat: no-repeat;
+        }
+
+        /* Responsive styles for the topbar */
+        @media (max-width: 768px) {
+            .title {
+                font-size: 1.5em;
+            }
+
+            .logo {
+                width: 50px;
+                height: 50px;
+            }
+
+            .button-list a {
+                font-size: 16px;
+            }
+        }
+
+        .footer {
+            /* Wenn der Footer fixiert ist und immer am unteren Rand des Viewports erscheinen soll */
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 60px;
+            background: linear-gradient(90deg, #1b003a, #0f0f0f, #1b003a);
+            padding: 20px;
+            z-index: 10;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .footer-text {
+            font-family: "Abel", sans-serif;
+            font-size: 20px;
+            color: white;
+            margin: 5px 0; /* Für etwas Abstand zwischen den Textzeilen */
+            text-align: center; /* Zentriert den Text, falls notwendig */
+        }
+
+        .footer-text a {
+            text-decoration: none;
+            color: white;
+            /* Fügen Sie hier weitere Stile hinzu, falls erforderlich */
+        }
+
+
+        .main-content {
+            max-width: 1200px; /* Maximale Breite des Inhaltsbereichs */
+            margin: 160px auto 0 auto; /* Zentriert den Inhaltsbereich horizontal und setzt den oberen Abstand */
+            display: flex;
+            justify-content: space-between; /* Sorgt für Abstand zwischen den Spalten */
+            padding: 0 20px; /* Fügt innen einen Abstand hinzu, damit die Container nicht direkt am Rand sind */
+            width: 60%;
+        }
+
+        .column-container {
+            display: flex;
+            flex-direction: column;
+            gap: 20px; /* Abstand zwischen den Containern */
+            width: calc(50% - 10px); /* 50% der Breite des Elternelements minus halbem Abstand */
+        }
+
+        .info-container {
+            background: rgba(255, 255, 255, 0.8);
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.2s;
+        }
+
+        .info-container p {
+            /* Mache das es weiter zusammen ist! */
+            font-family: "Abel", sans-serif;
+            font-size: 18px;
+            color: black;
+            margin: 5px;
+
+        }
+
+        .info-container:hover {
+            transform: translateY(-5px);
+        }
+
+        @media (max-width: 768px) {
+            .column-container {
+                width: 100%; /* Bei kleineren Bildschirmen nehmen die Container volle Breite ein */
+            }
+
+            .main-content {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .info-container {
+                width: calc(100% - 40px); /* Etwas geringerer Wert für kleinere Bildschirme */
+                margin-bottom: 20px; /* Fügt Abstand am unteren Rand hinzu */
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <div class="content">
+        <div class="topbar">
+            <div class="title">VModz - Service</div>
+            <div class="logo"></div>
+            <div class="button-list">
+                <a href="https://discord.gg/qbWaJmbQmR" target="_blank" class="button">Discord</a>
+                <a href="https://www.tiktok.com/@marlonx.rbl" target="_blank" class="button">TikTok</a>
+            </div>
+        </div>
+
+        <div class="main-content">
+            <div class="column-container">
+                <!-- Linke Spalte -->
+                <div class="info-container">
+                    <h2>WZ3/MW3 Unlocker</h2>
+                    <p>Week: 20.00€</p>
+                    <p>Month: 30.00€</p>
+                    <p>Lifetime: 40.00€</p>
+                </div>
+                <div class="info-container">
+                    <h2>WZ3/MW3 Chair + Woofer</h2>
+                    <p>Week: 20.00€</p>
+                    <p>Month: 40.00€</p>
+                </div>
+                <div class="info-container">
+                    <h2>WZ3/MW3 Camos</h2>
+                    <p>1x 1.50€</p>
+                    <p>2x 2.23€</p>
+                    <p>3x 3.12€</p>
+                    <p>4x 4.07€</p>
+                    <p>5x 5.00€</p>
+                </div>
+            </div>
+            <div class="column-container">
+                <!-- Rechte Spalte -->
+                <div class="info-container">
+                    <h2>WZ3/MW3 Accounts</h2>
+                    <p>Normal Account: 5.00€ | Includes 5 Camos, 0 Hour Playtime and (STEAM)</p>
+                    <p>Premium Account: 7.00€ | Includes 5 Camos, and Level 20 (STEAM)</p>
+                    <p>VIP Account: 12.00€ | Includes 5 Camos, and Level 55 (STEAM)</p>
+                </div>
+                <div class="info-container">
+                    <h2>Discord Bot</h2>
+                    <p>Custom: 10.00€</p>
+                    <p>Custom + Hosting a Week: 12.00€</p>
+                    <p>Custom + Hosting a Month: 14.00€</p>
+                </div>
+                <div class="info-container">
+                    <h2>Bot Hosting</h2>
+                    <p>Week: 5.00€</p>
+                    <p>Month: 7.00€</p>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="footer">
+            <div class="footer-text">Made with ❤️ by <a href="https://github.com/MarlonRBL" target="_blank">Marlon</a></div>
+            <div class="footer-text">© 2024 VModz</div>
+        </div>
+    </div>
+</body>
+</html>
